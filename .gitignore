@@ -1,0 +1,7 @@
+/assets/classes/*
+/assets/docs*
+/cache/*
+/cache_start.php
+/cache_end.php
+/.htaccess
+/ganalytics.php
