@@ -1,4 +1,5 @@
 <?php
+setlocale(LC_TIME, "es_CL.utf8");
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
@@ -86,7 +87,6 @@ $aData = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
 $cnt = 1;
 $hoy = $maniana = '';
 foreach($aData as $registro) {
-	
 	//partimos desde la segunda fila de la hoja de calculo
 	if($cnt>1) {
 		//verifico que el registro sea igual a la fecha actual
