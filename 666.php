@@ -76,10 +76,9 @@ switch ($region) {
 	
 	default:
 		$file = "assets/docs/13 Región_Metropolitana_1º_2013_v1.xlsx";
-		$n_region = "Metropolitana";
+		$n_region = "Metropolitana de Santiago";
 		break;
 }
-//$objPHPExcel = $objReader->load("assets/docs/1  Región_de_Tarapaca_1º_2013 v1.xlsx");
 $objPHPExcel = $objReader->load($file);
 
 $aData = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
@@ -88,7 +87,9 @@ $cnt = 1;
 $hoy = $maniana = '';
 foreach($aData as $registro) {
 	
+	//partimos desde la segunda fila de la hoja de calculo
 	if($cnt>1) {
+		//verifico que el registro sea igual a la fecha actual
 		if( (strtotime('2013-'.$registro['F'].'-'.$registro['E'])) == strtotime( date('Y-m-d') ) ) {
 			$hoy .= '<tr>';
 			$hoy .= '<td><a href="https://maps.google.com/?q='.urlencode(strtolower($registro['D']).', '.strtolower($registro['B']).', chile').'" target="_blank">'.$registro['D'].'</a></td><td>'.$registro['B'].'</td>';
@@ -96,13 +97,6 @@ foreach($aData as $registro) {
 			$hoy .= '<td>'.strtolower($registro['G']).'</td>';
 			$hoy .= '</tr>';
 		}
-		/*if( strtotime('2013-'.$registro['F'].'-'.$registro['E']) == strtotime( date('Y').date('m').date('d')+1 ) ) {
-			$maniana .= '<tr>';
-			$maniana .= '<td>'.$registro['D'].'</td><td>'.$registro['B'].'</td>';
-			$maniana .= '<td>'.strftime('%a %d de %b, %Y', strtotime('2013-'.$registro['F'].'-'.$registro['E'])) .'</td>';
-			$maniana .= '</tr>';
-		}*/
-		
 	}
 
 	$cnt++;

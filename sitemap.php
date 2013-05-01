@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Farmacias de Turno - CL</title>
+    <title>Farmacias de Turno - Mapa del Sitio - CL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Farmacia, farmacia, turno, turnos, <?php echo date('Y') ?>, <?php echo date('F') ?>,region,Arica,Parinacota,Tarapacá,Antofagasta,Atacama,Coquimbo,Valparaíso,Metropolitana,Santiago,Libertador Gral. Bernardo OHiggins,Maule,Biobío,Araucanía,de Los Ríos,de Los Lagos,de Aysén,de Magallanes">
-    <meta name="description" content="Listado Farmacias de Turno <?php echo date('F') ?> <?php echo date('Y') ?>">
+    <meta name="description" content="Mapa del sitio, Listado de regiones y comunas con Farmacias de Turno <?php echo date('F') ?> <?php echo date('Y') ?>">
     <meta name="author" content="José Damián Garrido Muñoz">
 
     <!-- Le styles -->
@@ -46,6 +46,11 @@
           <div class="nav-collapse collapse">
 
             <ul class="nav">
+              <!--
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              
+              -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Regiones <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -79,24 +84,12 @@
       <!-- Example row of columns -->
       <div class="row-fluid">
         <?php
-        include('666.php');
+        include('999.php');
         ?>
-        <h2>Farmacias de turno en la región <?php echo $n_region ?></h2>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Dirección</th>
-              <th>Comuna</th>
-              <th>Fecha</th>
-              <th>Horario atención</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            echo $hoy;
-            ?>
-          </tbody>
-        </table>
+        <h2>Mapa del sitio</h2>
+        <ul>
+        	<?php echo $elmapa ?>
+        </ul>
         <div id="acerca">
           <h3>Acerca</h3>
           <p>Los datos que aquí se presentan fueron obtenidos desde el <a href="http://datos.gob.cl/datasets/ver/1547">Portal de Datos Públicos del Estado</a> con fecha 10 de Abril del 2013 y se entregan tal como vienen.</p>
