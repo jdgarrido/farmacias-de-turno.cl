@@ -93,7 +93,7 @@ foreach($aData as $registro) {
 		if( (strtotime('2013-'.$registro['F'].'-'.$registro['E'])) == strtotime( date('Y-m-d') ) ) {
 			$hoy .= '<tr>';
 			$hoy .= '<td><a href="https://maps.google.com/?q='.urlencode(strtolower($registro['D']).', '.strtolower($registro['B']).', chile').'" target="_blank">'.$registro['D'].'</a></td><td>'.$registro['B'].'</td>';
-			$hoy .= '<td>'.strftime('%a %d de %b, %Y', strtotime('2013-'.$registro['F'].'-'.$registro['E'])) .'</td>';
+			$hoy .= '<td>'.strftime('%A %d de %B, %Y', strtotime('2013-'.$registro['F'].'-'.$registro['E'])) .'</td>';
 			$hoy .= '<td>'.strtolower($registro['G']).'</td>';
 			$hoy .= '</tr>';
 		}
