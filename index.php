@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <title>Farmacias de Turno - CL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Farmacia, farmacia, turno, turnos, <?php echo date('Y') ?>, <?php echo date('F') ?>,region,Arica,Parinacota,Tarapacá,Antofagasta,Atacama,Coquimbo,Valparaíso,Metropolitana,Santiago,Libertador Gral. Bernardo OHiggins,Maule,Biobío,Araucanía,de Los Ríos,de Los Lagos,de Aysén,de Magallanes">
-    <meta name="description" content="Listado Farmacias de Turno <?php echo date('F') ?> <?php echo date('Y') ?>">
-    <meta name="author" content="José Damián Garrido Muñoz">
+    <meta name="keywords" content="farmasias, Farmasias de turno, farmacias turno, Farmacia, farmacia, turno, turnos, <?php echo date('Y') ?>, <?php echo date('F') ?>,region,Arica,Parinacota,Tarapacá,Antofagasta,Atacama,Coquimbo,Valparaíso,Metropolitana,Santiago,Libertador Gral. Bernardo OHiggins,Maule,Biobío,Araucanía,de Los Ríos,de Los Lagos,de Aysén,de Magallanes">
+    <meta name="description" content="Listado Farmacias de Turno en Chile para las distintas regiones del país">
+    <meta name="author" content="José Damián Garrido Muñoz (jgarrido)">
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
-        padding-top: 60px;
+        padding-top: 70px;
         padding-bottom: 40px;
       }
     </style>
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/">Farmacias de Turno</a>
+          <a class="brand" href="/"><h1>Farmacias de Turno</h1></a>
           <div class="nav-collapse collapse">
 
             <ul class="nav">
@@ -82,6 +82,7 @@
         include('666.php');
         ?>
         <h2>Farmacias de turno en la región <?php echo $n_region ?></h2>
+        <h3><?php echo strftime("%A %d de %B, %G", strtotime(date('Y-m-d'))) ?></h3>
         <table class="table table-striped">
           <thead>
             <tr>
