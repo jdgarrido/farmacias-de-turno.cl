@@ -49,21 +49,21 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Regiones <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/?r=15">Arica y Parinacota</a></li>
-                  <li><a href="/?r=1">Tarapacá</a></li>
-                  <li><a href="/?r=2">Antofagasta</a></li>
-                  <li><a href="/?r=3">Atacama</a></li>
-                  <li><a href="/?r=4">Coquimbo</a></li>
-                  <li><a href="/?r=5">Valparaíso</a></li>
-                  <li><a href="/?r=13">Metropolitana de Santiago</a></li>
-                  <li><a href="/?r=6">Del Libertador Gral. Bernardo O’Higgins</a></li>
-                  <li><a href="/?r=7">Del Maule</a></li>
-                  <li><a href="/?r=8">Del Biobío</a></li>
-                  <li><a href="/?r=9">De la Araucanía</a></li>
-                  <li><a href="/?r=14">De los Ríos</a></li>
-                  <li><a href="/?r=10">De los Lagos</a></li>
-                  <li><a href="/?r=11">Aysén del Gral. Carlos Ibáñez del Campo</a></li>
-                  <li><a href="/?r=12">Magallanes y de la Antártica Chilena</a></li>
+                  <li><a href="/?r=arica_y_parinacota">Arica y Parinacota</a></li>
+                  <li><a href="/?r=tarapaca">Tarapacá</a></li>
+                  <li><a href="/?r=antofagasta">Antofagasta</a></li>
+                  <li><a href="/?r=atacama">Atacama</a></li>
+                  <li><a href="/?r=coquimbo">Coquimbo</a></li>
+                  <li><a href="/?r=valparaiso">Valparaíso</a></li>
+                  <li><a href="/?r=santiago">Metropolitana de Santiago</a></li>
+                  <li><a href="/?r=ohiggins">Del Libertador Gral. Bernardo O’Higgins</a></li>
+                  <li><a href="/?r=maule">Del Maule</a></li>
+                  <li><a href="/?r=biobio">Del Biobío</a></li>
+                  <li><a href="/?r=araucania">De la Araucanía</a></li>
+                  <li><a href="/?r=de_los_rios">De los Ríos</a></li>
+                  <li><a href="/?r=de_los_lagos">De los Lagos</a></li>
+                  <li><a href="/?r=aysen">Aysén del Gral. Carlos Ibáñez del Campo</a></li>
+                  <li><a href="/?r=magallanes_antartica">Magallanes y de la Antártica Chilena</a></li>
                 </ul>
               </li>
               <li><a href="#acerca">Acerca</a></li>
@@ -86,6 +86,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
+              <th>Nombre</th>
               <th>Dirección</th>
               <th>Comuna</th>
               <th>Fecha</th>

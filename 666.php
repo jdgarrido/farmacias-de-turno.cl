@@ -19,58 +19,72 @@ $n_region = '';
 
 switch ($region) {
 	case 1:
+	case "tarapaca":
 		$file = "assets/docs/1  Región_de_Tarapaca_1º_2013 v1.xlsx";
 		$n_region = "de Tarapacá";
 		break;
 	case 2:
+	case "antofagasta":
 		$file = "assets/docs/2 Región_de_Antofagasta_1º_2013 v1.xlsx";
 		$n_region = "de Antofagasta";
 		break;
 	case 3:
+	case "atacama":
 		$file = "assets/docs/3_Region_de_Atacama_1_2013_v2_180313.xlsx";
 		$n_region = "de Atacama";
 		break;
 	case 4:
+	case "coquimbo":
 		$file = "assets/docs/4 Región_de_Coquimbo__1º_2013 v1.xlsx";
 		$n_region = "de Coquimbo";
 		break;
 	case 5:
+	case "valparaiso":
 		$file = "assets/docs/5 Región_de_Valparaiso_1º_2013 v4_080213.xlsx";
 		$n_region = "de Valparaíso";
 		break;
 	case 6:
+	case "ohiggins":
 		$file = "assets/docs/6 Región_de_O'Higgins__1º_2013 v1.xlsx";
 		$n_region = "del Libertador Gral. Bernardo O’Higgins";
 		break;
 	case 7:
+	case "maule":
 		$file = "assets/docs/7 Región_del_Maule_1º_2013_v2_090113.xlsx";
 		$n_region = "del Maule";
 		break;
 	case 8:
+	case "biobio":
 		$file = "assets/docs/8_Region_de_Bio_Bio_1_2013_v2_210213.xlsx";
 		$n_region = "del Biobío";
 		break;
 	case 9:
+	case "araucania":
 		$file = "assets/docs/9 Región_de_Araucanía_1º_2013_v2 110113.xlsx";
 		$n_region = "de la Araucanía";
 		break;
 	case 10:
+	case "los_lagos":
 		$file = "assets/docs/10 Región_de_Los_Lagos_1_2013_v3 060213.xlsx";
 		$n_region = "de Los Lagos";
 		break;
 	case 11:
+	case "aysen":
 		$file = "assets/docs/11 Región_del_Gral_del_Campo_1°_2013 v1.xlsx";
 		$n_region = "de Aysén del Gral. Carlos Ibáñez del Campo";
 		break;
 	case 12:
+	case "magallanes_antartica":
 		$file = "assets/docs/12 Región_de_Magallanes_y_Antartica_Chilena_1º_2013_v1.xlsx";
 		$n_region = "de Magallanes y de la Antártica Chilena";
 		break;
 	case 14:
+	case "de_los_rios":
 		$file = "assets/docs/14 Región_de_Los_Ríos__1º_2013_v1.xlsx";
 		$n_region = "de Los Ríos";
 		break;
 	case 15:
+	case "arica_parinacota":
 		$file = "assets/docs/15  Región_de_Arica_y_Parinacota_1º_2013 v1.xlsx";
 		$n_region = "Arica y Parinacota";
 		break;
@@ -92,6 +106,7 @@ foreach($aData as $registro) {
 		//verifico que el registro sea igual a la fecha actual
 		if( (strtotime('2013-'.$registro['F'].'-'.$registro['E'])) == strtotime( date('Y-m-d') ) ) {
 			$hoy .= '<tr>';
+			$hoy .= '<td>'.$registro['C'].'</td>';
 			$hoy .= '<td><a href="https://maps.google.com/?q='.urlencode(strtolower($registro['D']).', '.strtolower($registro['B']).', chile').'" target="_blank">'.$registro['D'].'</a></td><td>'.$registro['B'].'</td>';
 			$hoy .= '<td>'.strftime('%A %d de %B, %Y', strtotime('2013-'.$registro['F'].'-'.$registro['E'])) .'</td>';
 			$hoy .= '</tr>';
