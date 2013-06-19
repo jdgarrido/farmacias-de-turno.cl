@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Farmacias de Turno - CL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="farmasias, Farmasias de turno, farmacias turno, Farmacia, farmacia, turno, turnos, <?php echo date('Y') ?>, <?php echo date('F') ?>,region,Arica,Parinacota,Tarapacá,Antofagasta,Atacama,Coquimbo,Valparaíso,Metropolitana,Santiago,Libertador Gral. Bernardo OHiggins,Maule,Biobío,Araucanía,de Los Ríos,de Los Lagos,de Aysén,de Magallanes">
-    <meta name="description" content="Listado Farmacias de Turno en Chile para las distintas regiones del país">
+    <meta name="keywords" content="farmasias, Farmasias de turno, farmacias turno, Farmacia, farmacia, turno, turnos,">
+    <meta name="description" content="Farmacias de Turno en Chile para las distintas regiones del país">
     <meta name="author" content="José Damián Garrido Muñoz (jgarrido)">
 
     <!-- Le styles -->
@@ -89,7 +89,6 @@
               <th>Dirección</th>
               <th>Comuna</th>
               <th>Fecha</th>
-              <th>Horario atención</th>
             </tr>
           </thead>
           <tbody>
