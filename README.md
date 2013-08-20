@@ -7,9 +7,9 @@ El Min de Salud cuenta con una implementación de las farmaciás de turno, el cu
 
 ###Cómo funciona?
 
-Obtenemos la información del portal de datos del estado
-la procesamos, a un formato simple separado por comas (CSV)
-la desplegamos :)
+*Obtenemos la información del portal de datos del estado
+*la procesamos, a un formato simple separado por comas (CSV)
+*la desplegamos :)
 
 ###Cómo ejecutarlo en mi máquina local?
 
