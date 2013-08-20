@@ -7,13 +7,14 @@ El Min de Salud cuenta con una implementación de las farmaciás de turno, el cu
 
 ###Cómo funciona?
 
-Se utiliza la clase PHPExcel para leer las hojas de cálculo que proporciona el Ministerio de Salud, finalizado el proceso, la herramienta entregará solo las filas que correspondan a la fecha en que se visualiza la información.
+Obtenemos la información del portal de datos del estado
+la procesamos, a un formato simple separado por comas (CSV)
+la desplegamos :)
 
 ###Cómo ejecutarlo en mi máquina local?
 
-*Para que esto funcione es necesario descargar PHPExcel y agregar la clase dentro de la carpeta /assets/classes/
-*Además es necesario descargar dentro de la carpeta /assets/docs/ las planillas de cálculo que se encuentran en http://datos.gob.cl/datasets/ver/1547
-*Si deseas cachear las páginas, te recomeniendo implementar un sistema de cache, como este http://www.tufuncion.com/cache-php
+*Además es necesario descargar dentro de la carpeta /assets/csv/ las planillas de cálculo procesadas y guardadas en formato CSV que se encuentran en http://datos.gob.cl/datasets/ver/1547
+*Si deseas cachear las páginas, te recomeniendo implementar un sistema de cache
 *Si tu servidor usa SuPHP, te recomiendo crear un php.ini en la raiz de tu sitio, definirlo en tu .htaccess y voilá
 
 ###Puedo mejorarla?

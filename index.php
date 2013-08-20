@@ -1,124 +1,135 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Farmacias de Turno - CL</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="farmasias, Farmasias de turno, farmacias turno, Farmacia, farmacia, turno, turnos,">
-    <meta name="description" content="Farmacias de Turno en Chile para las distintas regiones del país">
-    <meta name="author" content="José Damián Garrido Muñoz (jgarrido)">
+	<head>
+		<meta charset="utf-8">
+		<title>Farmacias de Turno</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="farmasias, Farmasias de turno, farmacias turno, Farmacia, farmacia, turno, turnos, farmacias antofagasta, farmacias santiago, farmacias temuco, farmacias biobio, farmacias rancagua">
+		<meta name="description" content="Farmacias de Turno en Chile para las distintas regiones del país">
+		<meta name="author" content="José Damián Garrido Muñoz (@jgarrido)">
 
-    <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 70px;
-        padding-bottom: 40px;
-      }
-    </style>
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-    <![endif]-->
+	</head>
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png" />
-    <link rel="shortcut icon" href="assets/ico/favicon.png" />
-  </head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<?php
+				if(!isset($_GET['r'])) {
+				?>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<?php
+				}
+				?>
+				<a class="navbar-brand" href="/">Farmacias de turno</a>
+			</div>
 
-  <body>
+			<?php
+			if(!isset($_GET['r'])) {
+			?>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#arica_y_parinacota">Arica y Parinacota</a></li>
+					<li><a href="#tarapaca">Tarapacá</a></li>
+					<li><a href="#antofagasta">Antofagasta</a></li>
+					<li><a href="#atacama">Atacama</a></li>
+					<li><a href="#coquimbo">Coquimbo</a></li>
+					<li><a href="#valparaiso">Valparaíso</a></li>
+					<li><a href="#metropolitana">Metropolitana</a></li>
+					<li><a href="#ohiggins">O'Higgins</a></li>
+					<li><a href="#maule">Maule</a></li>
+					<li><a href="#biobio">Bio-Bio</a></li>
+					<li><a href="#araucania">Araucania</a></li>
+					<li><a href="#los_rios">los Ríos</a></li>
+					<li><a href="#los_lagos">los Lagos</a></li>
+					<li><a href="#aysen">Aysen</a></li>
+					<li><a href="#magallanes">Magallanes</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+			<?php
+			}
+			?>
+		</nav>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="/"><h1>Farmacias de Turno</h1></a>
-          <div class="nav-collapse collapse">
+		<div class="container">
+			<div class="row">
+				<div class="alert alert-info col-sm-3 col-sm-offset-9">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Hey!!!</strong>
+					Estamos con una nueva versión y me gustaría obtener <a data-toggle="modal" href="#myModal">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
+				</div>
 
-            <ul class="nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Regiones <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="/?r=arica_y_parinacota">Arica y Parinacota</a></li>
-                  <li><a href="/?r=tarapaca">Tarapacá</a></li>
-                  <li><a href="/?r=antofagasta">Antofagasta</a></li>
-                  <li><a href="/?r=atacama">Atacama</a></li>
-                  <li><a href="/?r=coquimbo">Coquimbo</a></li>
-                  <li><a href="/?r=valparaiso">Valparaíso</a></li>
-                  <li><a href="/?r=santiago">Metropolitana de Santiago</a></li>
-                  <li><a href="/?r=ohiggins">Del Libertador Gral. Bernardo O’Higgins</a></li>
-                  <li><a href="/?r=maule">Del Maule</a></li>
-                  <li><a href="/?r=biobio">Del Biobío</a></li>
-                  <li><a href="/?r=araucania">De la Araucanía</a></li>
-                  <li><a href="/?r=de_los_rios">De los Ríos</a></li>
-                  <li><a href="/?r=de_los_lagos">De los Lagos</a></li>
-                  <li><a href="/?r=aysen">Aysén del Gral. Carlos Ibáñez del Campo</a></li>
-                  <li><a href="/?r=magallanes_antartica">Magallanes y de la Antártica Chilena</a></li>
-                </ul>
-              </li>
-              <li><a href="#acerca">Acerca</a></li>
-              <li><a href="/sitemap.php">Mapa del sitio</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title">Comentarios</h4>
+							</div>
+							<div class="modal-body">
+							
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary">Enviar</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+			</div>
+			<div class="row">
+				
+				<?php
+				$filter_region = (isset($_GET['r'])) ? '&r='.$_GET['r'] : '';
+				$aListadoFarmacias = json_decode( file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/777.php?type=json'.$filter_region) );
 
-    <div class="container">
-
-      <!-- Example row of columns -->
-      <div class="row-fluid">
-        <?php
-        include('666.php');
-        ?>
-        <h2>Farmacias de turno en la región <?php echo $n_region ?></h2>
-        <h3><?php echo strftime("%A %d de %B, %G", strtotime(date('Y-m-d'))) ?></h3>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Dirección</th>
-              <th>Comuna</th>
-              <th>Fecha</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            echo $hoy;
-            ?>
-          </tbody>
-        </table>
-        <div id="acerca">
-          <h3>Acerca</h3>
-          <p>Los datos que aquí se presentan fueron obtenidos desde el <a href="http://datos.gob.cl/datasets/ver/1547">Portal de Datos Públicos del Estado</a> con fecha 10 de Abril del 2013 y se entregan tal como vienen.</p>
-          <h3>Fork me</h3>
-          <p><a href="https://github.com/jdgarrido/farmacias-de-turno.cl">Deseas mejorar esto? :)</a></p>
-        </div>
-      </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; 2013</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <?php include_once("ganalytics.php") ?>
-  </body>
+				foreach( $aListadoFarmacias as $key => $farmacia ) {
+					?>
+					<div class="col-xs-12">
+						<div class="page-header">
+					      <h2 id="<?php echo $key ?>"><?php echo $farmacia[0]->region ?></h2>
+					    </div>
+					    <div class="table-responsive">
+						    <table class="table table-striped">
+						    	<tr>
+						    		<th>Comuna</th>
+						    		<th>Dirección</th>
+						    		<th>Farmacia</th>
+						    	</tr>
+						    <?php
+						    foreach( $farmacia as $f ) {
+						    	?>
+						    	<tr>
+						    		<td><?php echo $f->comuna ?></td>
+						    		<td><a href="http://maps.google.com?q=<?php echo urlencode($f->direccion.', '.$f->comuna) ?>" target="_blank"><?php echo $f->direccion ?></a></td>
+						    		<td><?php echo $f->farmacia ?></td>
+						    	</tr>
+						    	<?php
+						    }
+						    ?>
+						    </table>
+						</div>
+					</div>
+					<?php
+				}
+				?>
+			</div>
+		</div>
+		<?php include_once("ganalytics.php") ?>
+	</body>
 </html>

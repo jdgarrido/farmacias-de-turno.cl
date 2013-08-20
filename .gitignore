@@ -1,5 +1,6 @@
 /assets/classes/*
 /assets/docs*
+/assets/csv*
 /cache/*
 /cache_start.php
 /cache_end.php
