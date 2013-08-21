@@ -70,27 +70,8 @@
 				<div class="alert alert-info col-sm-3 col-sm-offset-9">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<strong>Hey!!!</strong>
-					Estamos con una nueva versión y me gustaría obtener <a data-toggle="modal" href="#myModal">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
+					Estamos con una nueva versión y me gustaría obtener <a href="https://docs.google.com/forms/d/1HoKg74V_RLUEhBrZweD-dHcHZqHTDKb0SsyFykkKy8E/viewform" target="_blank">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
 				</div>
-
-				<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								<h4 class="modal-title">Comentarios</h4>
-							</div>
-							<div class="modal-body">
-							
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-								<button type="button" class="btn btn-primary">Enviar</button>
-							</div>
-						</div><!-- /.modal-content -->
-					</div><!-- /.modal-dialog -->
-				</div><!-- /.modal -->
 			</div>
 			<div class="row">
 				
