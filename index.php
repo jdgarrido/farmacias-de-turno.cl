@@ -19,7 +19,7 @@
 	</head>
 
 	<body>
-		<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-default" role="navigation" id="top">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<?php
@@ -43,21 +43,21 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#arica_y_parinacota">Arica y Parinacota</a></li>
-					<li><a href="#tarapaca">Tarapacá</a></li>
-					<li><a href="#antofagasta">Antofagasta</a></li>
-					<li><a href="#atacama">Atacama</a></li>
-					<li><a href="#coquimbo">Coquimbo</a></li>
-					<li><a href="#valparaiso">Valparaíso</a></li>
-					<li><a href="#metropolitana">Metropolitana</a></li>
-					<li><a href="#ohiggins">O'Higgins</a></li>
-					<li><a href="#maule">Maule</a></li>
-					<li><a href="#biobio">Bio-Bio</a></li>
-					<li><a href="#araucania">Araucania</a></li>
-					<li><a href="#los_rios">los Ríos</a></li>
-					<li><a href="#los_lagos">los Lagos</a></li>
-					<li><a href="#aysen">Aysen</a></li>
-					<li><a href="#magallanes">Magallanes</a></li>
+					<li><a href="#arica_y_parinacota" onClick="_gaq.push(['Region','click','arica_y_parinacota'])">Arica y Parinacota</a></li>
+					<li><a href="#tarapaca" onClick="_gaq.push(['Region','click','tarapaca'])">Tarapacá</a></li>
+					<li><a href="#antofagasta" onClick="_gaq.push(['Region','click','antofagasta'])">Antofagasta</a></li>
+					<li><a href="#atacama" onClick="_gaq.push(['Region','click','atacama'])">Atacama</a></li>
+					<li><a href="#coquimbo" onClick="_gaq.push(['Region','click','coquimbo'])">Coquimbo</a></li>
+					<li><a href="#valparaiso" onClick="_gaq.push(['Region','click','valparaiso'])">Valparaíso</a></li>
+					<li><a href="#metropolitana" onClick="_gaq.push(['Region','click','metropolitana'])">Metropolitana</a></li>
+					<li><a href="#ohiggins" onClick="_gaq.push(['Region','click','ohiggins'])">O'Higgins</a></li>
+					<li><a href="#maule" onClick="_gaq.push(['Region','click','maule'])">Maule</a></li>
+					<li><a href="#biobio" onClick="_gaq.push(['Region','click','biobio'])">Bio-Bio</a></li>
+					<li><a href="#araucania" onClick="_gaq.push(['Region','click','araucania'])">Araucania</a></li>
+					<li><a href="#los_rios" onClick="_gaq.push(['Region','click','los_rios'])">los Ríos</a></li>
+					<li><a href="#los_lagos" onClick="_gaq.push(['Region','click','los_lagos'])">los Lagos</a></li>
+					<li><a href="#aysen" onClick="_gaq.push(['Region','click','aysen'])">Aysen</a></li>
+					<li><a href="#magallanes" onClick="_gaq.push(['Region','click','magallanes'])">Magallanes</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 			<?php
@@ -70,7 +70,7 @@
 				<div class="alert alert-info col-sm-3 col-sm-offset-9">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<strong>Hey!!!</strong>
-					Estamos con una nueva versión y me gustaría obtener <a href="https://docs.google.com/forms/d/1HoKg74V_RLUEhBrZweD-dHcHZqHTDKb0SsyFykkKy8E/viewform" target="_blank">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
+					Estamos con una nueva versión y me gustaría obtener <a href="https://docs.google.com/forms/d/1HoKg74V_RLUEhBrZweD-dHcHZqHTDKb0SsyFykkKy8E/viewform" onClick="_gaq.push(['Feedback','click'])" target="_blank">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
 				</div>
 			</div>
 			<div class="row">
@@ -97,7 +97,7 @@
 						    	?>
 						    	<tr>
 						    		<td><?php echo $f->comuna ?></td>
-						    		<td><a href="http://maps.google.com?q=<?php echo urlencode($f->direccion.', '.$f->comuna) ?>" target="_blank"><?php echo $f->direccion ?></a></td>
+						    		<td><a href="http://maps.google.com?q=<?php echo urlencode($f->direccion.', '.$f->comuna) ?>" onClick="_gaq.push(['Mapa','click','<?php echo str_replace(' ', '-', $f->comuna) ?>'])" target="_blank"><?php echo $f->direccion ?></a></td>
 						    		<td><?php echo $f->farmacia ?></td>
 						    	</tr>
 						    	<?php
@@ -105,6 +105,7 @@
 						    ?>
 						    </table>
 						</div>
+						<a href="#top" onClick="_gaq.push(['Volver','click'])">volver</a>
 					</div>
 					<?php
 				}
