@@ -43,21 +43,21 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#arica_y_parinacota" onClick="_gaq.push(['send', 'event', 'Region','click','arica_y_parinacota'])">Arica y Parinacota</a></li>
-					<li><a href="#tarapaca" onClick="_gaq.push(['send', 'event', 'Region','click','tarapaca'])">Tarapacá</a></li>
-					<li><a href="#antofagasta" onClick="_gaq.push(['send', 'event', 'Region','click','antofagasta'])">Antofagasta</a></li>
-					<li><a href="#atacama" onClick="_gaq.push(['send', 'event', 'Region','click','atacama'])">Atacama</a></li>
-					<li><a href="#coquimbo" onClick="_gaq.push(['send', 'event', 'Region','click','coquimbo'])">Coquimbo</a></li>
-					<li><a href="#valparaiso" onClick="_gaq.push(['send', 'event', 'Region','click','valparaiso'])">Valparaíso</a></li>
-					<li><a href="#metropolitana" onClick="_gaq.push(['send', 'event', 'Region','click','metropolitana'])">Metropolitana</a></li>
-					<li><a href="#ohiggins" onClick="_gaq.push(['send', 'event', 'Region','click','ohiggins'])">O'Higgins</a></li>
-					<li><a href="#maule" onClick="_gaq.push(['send', 'event', 'Region','click','maule'])">Maule</a></li>
-					<li><a href="#biobio" onClick="_gaq.push(['send', 'event', 'Region','click','biobio'])">Bio-Bio</a></li>
-					<li><a href="#araucania" onClick="_gaq.push(['send', 'event', 'Region','click','araucania'])">Araucania</a></li>
-					<li><a href="#los_rios" onClick="_gaq.push(['send', 'event', 'Region','click','los_rios'])">los Ríos</a></li>
-					<li><a href="#los_lagos" onClick="_gaq.push(['send', 'event', 'Region','click','los_lagos'])">los Lagos</a></li>
-					<li><a href="#aysen" onClick="_gaq.push(['send', 'event', 'Region','click','aysen'])">Aysen</a></li>
-					<li><a href="#magallanes" onClick="_gaq.push(['send', 'event', 'Region','click','magallanes'])">Magallanes</a></li>
+					<li><a href="#arica_y_parinacota" onClick="ga(['send', 'event', 'Region','click','arica_y_parinacota'])">Arica y Parinacota</a></li>
+					<li><a href="#tarapaca" onClick="ga(['send', 'event', 'Region','click','tarapaca'])">Tarapacá</a></li>
+					<li><a href="#antofagasta" onClick="ga(['send', 'event', 'Region','click','antofagasta'])">Antofagasta</a></li>
+					<li><a href="#atacama" onClick="ga(['send', 'event', 'Region','click','atacama'])">Atacama</a></li>
+					<li><a href="#coquimbo" onClick="ga(['send', 'event', 'Region','click','coquimbo'])">Coquimbo</a></li>
+					<li><a href="#valparaiso" onClick="ga(['send', 'event', 'Region','click','valparaiso'])">Valparaíso</a></li>
+					<li><a href="#metropolitana" onClick="ga(['send', 'event', 'Region','click','metropolitana'])">Metropolitana</a></li>
+					<li><a href="#ohiggins" onClick="ga(['send', 'event', 'Region','click','ohiggins'])">O'Higgins</a></li>
+					<li><a href="#maule" onClick="ga(['send', 'event', 'Region','click','maule'])">Maule</a></li>
+					<li><a href="#biobio" onClick="ga(['send', 'event', 'Region','click','biobio'])">Bio-Bio</a></li>
+					<li><a href="#araucania" onClick="ga(['send', 'event', 'Region','click','araucania'])">Araucania</a></li>
+					<li><a href="#los_rios" onClick="ga(['send', 'event', 'Region','click','los_rios'])">los Ríos</a></li>
+					<li><a href="#los_lagos" onClick="ga(['send', 'event', 'Region','click','los_lagos'])">los Lagos</a></li>
+					<li><a href="#aysen" onClick="ga(['send', 'event', 'Region','click','aysen'])">Aysen</a></li>
+					<li><a href="#magallanes" onClick="ga(['send', 'event', 'Region','click','magallanes'])">Magallanes</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 			<?php
@@ -70,7 +70,7 @@
 				<div class="alert alert-info col-sm-3 col-sm-offset-9">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<strong>Hey!!!</strong>
-					Estamos con una nueva versión y me gustaría obtener <a href="https://docs.google.com/forms/d/1HoKg74V_RLUEhBrZweD-dHcHZqHTDKb0SsyFykkKy8E/viewform" onClick="_gaq.push(['Feedback','click'])" target="_blank">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
+					Estamos con una nueva versión y me gustaría obtener <a href="https://docs.google.com/forms/d/1HoKg74V_RLUEhBrZweD-dHcHZqHTDKb0SsyFykkKy8E/viewform" onClick="ga(['Feedback','click'])" target="_blank">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
 				</div>
 			</div>
 			<div class="row">
@@ -97,7 +97,7 @@
 						    	?>
 						    	<tr>
 						    		<td><?php echo $f->comuna ?></td>
-						    		<td><a href="http://maps.google.com?q=<?php echo urlencode($f->direccion.', '.$f->comuna) ?>" onClick="_gaq.push(['send', 'event', 'Mapa','click','<?php echo str_replace(' ', '-', $f->comuna) ?>'])" target="_blank"><?php echo $f->direccion ?></a></td>
+						    		<td><a href="http://maps.google.com?q=<?php echo urlencode($f->direccion.', '.$f->comuna) ?>" onClick="ga(['send', 'event', 'Mapa','click','<?php echo str_replace(' ', '-', $f->comuna) ?>'])" target="_blank"><?php echo $f->direccion ?></a></td>
 						    		<td><?php echo $f->farmacia ?></td>
 						    	</tr>
 						    	<?php
@@ -105,7 +105,7 @@
 						    ?>
 						    </table>
 						</div>
-						<a href="#top" onClick="_gaq.push(['send', 'event', 'Volver','click'])">volver</a>
+						<a href="#top" onClick="ga(['send', 'event', 'Volver','click'])">volver</a>
 					</div>
 					<?php
 				}
