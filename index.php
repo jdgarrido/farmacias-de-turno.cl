@@ -1,12 +1,23 @@
+<?php
+$region = (isset($_GET['r'])) ? htmlentities($_GET['r']) : '';
+switch($region) {
+	case 'valparaiso':
+		$title = 'Valparaíso';
+		break;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Farmacias de Turno</title>
+		<title>Farmacias de Turno <?php echo $title ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="keywords" content="farmasias, Farmasias de turno, farmacias turno, Farmacia, farmacia, turno, turnos, farmacias antofagasta, farmacias santiago, farmacias temuco, farmacias biobio, farmacias rancagua">
 		<meta name="description" content="Farmacias de Turno en Chile para las distintas regiones del país">
 		<meta name="author" content="José Damián Garrido Muñoz (@jgarrido)">
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<link rel="shortcut icon" sizes="128x128" href="/assets/img/farmacia-ico.png">
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
