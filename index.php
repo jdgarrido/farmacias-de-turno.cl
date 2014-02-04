@@ -113,7 +113,7 @@
 		<style>
 			.set_Width_Height {
 				width: auto;
-				min-height: 480px;
+				min-height: 500px;
 			}
 			.container {
 				padding-right: initial;
