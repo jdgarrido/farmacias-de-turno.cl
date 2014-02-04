@@ -1,16 +1,8 @@
-<?php
-$region = (isset($_GET['r'])) ? htmlentities($_GET['r']) : '';
-switch($region) {
-	case 'valparaiso':
-		$title = 'Valparaíso';
-		break;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Farmacias de Turno <?php echo $title ?></title>
+		<title>Mapa Farmacias de Turno Chile</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="keywords" content="farmasias, Farmasias de turno, farmacias turno, Farmacia, farmacia, turno, turnos, farmacias antofagasta, farmacias santiago, farmacias temuco, farmacias biobio, farmacias rancagua">
 		<meta name="description" content="Farmacias de Turno en Chile para las distintas regiones del país">
@@ -26,108 +18,116 @@ switch($region) {
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD-QOzxVKf0lgmTnllZqvnqVdA3YWijcro&sensor=true">
+    </script>
+		<script type="text/javascript">
+			var map;
+			
+	    function initialize() {
+	    	var mapOptions = {
+			    zoom: 13
+			  };
+			  map = new google.maps.Map(document.getElementById('map_canvas'),
+			      mapOptions);
+			  
+			  // Try HTML5 geolocation
+			  if(navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(function(position) {
+			      var pos = new google.maps.LatLng(position.coords.latitude,
+			                                       position.coords.longitude);
 
+			      var infowindow = new google.maps.InfoWindow({
+			        map: map,
+			        position: pos
+			      });
+
+			      
+			      var marker = new google.maps.Marker({
+			      	position: pos,
+				      map: map,
+				      title: 'Holi!'
+					  });
+
+			      var json_url = '/json.php?type=json';
+					  $.getJSON(json_url,function(data){
+					    $.each(data.result, function(i, field){
+					      if(i>0)
+					      {
+					      	var image = 'https://cdn1.iconfinder.com/data/icons/nuvola2/22x22/apps/kcmdrkonqi.png';
+					      	var pos = new google.maps.LatLng(field[6],field[7]);
+
+					      	var contentString = '<div><p><strong>Dirección</strong>: '+field[2]+'</p><p><strong>Nombre Farmacia</strong>: '+field[3]+'</p><p><strong>Horario </strong>: '+field[4]+' - '+field[5]+'</p><p><strong>Teléfono</strong>: <a href="tel:'+field[8]+'">'+field[8]+'</a></p><p><a href="http://maps.apple.com/?q='+field[6]+','+field[7]+'">ver ruta</a></p></div>';
+
+								  var infowindow = new google.maps.InfoWindow({
+								      content: contentString
+								  });
+
+					      	var marker = new google.maps.Marker({
+						      	position: pos,
+							      map: map,
+							      title: 'Farmacia: '+field[3],
+							      icon: image
+								  });
+
+								  google.maps.event.addListener(marker, 'click', function() {
+								    infowindow.open(map,marker);
+								  });
+					      }
+					    });
+					  });
+
+			      map.setCenter(pos);
+			    }, function() {
+			      handleNoGeolocation(true);
+			    });
+			  } else {
+			    // Browser doesn't support Geolocation
+			    handleNoGeolocation(false);
+			  }
+	    }
+
+	    function handleNoGeolocation(errorFlag) {
+			  if (errorFlag) {
+			    var content = 'Error: The Geolocation service failed.';
+			  } else {
+			    var content = 'Error: Your browser doesn\'t support geolocation.';
+			  }
+
+			  var options = {
+			    map: map,
+			    position: new google.maps.LatLng(60, 105),
+			    content: content
+			  };
+
+			  var infowindow = new google.maps.InfoWindow(options);
+			  map.setCenter(options.position);
+			}
+
+	    $(document).ready(function(){
+	    	var d = document.getElementById("map_canvas");
+						d.className = d.className + "set_Width_Height";
+	    })
+
+
+		</script>
+		<style>
+			.set_Width_Height {
+				width: auto;
+				min-height: 480px;
+			}
+			.container {
+				padding-right: initial;
+				padding-left: initial;
+			}
+		</style>
 	</head>
 
-	<body>
-		<nav class="navbar navbar-default" role="navigation" id="top">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<?php
-				if(!isset($_GET['r'])) {
-				?>
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<?php
-				}
-				?>
-				<a class="navbar-brand" href="/" onClick="ga('send','event','Trade','click')">Farmacias de turno</a>
-			</div>
-
-			<?php
-			if(!isset($_GET['r'])) {
-			?>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Regiones <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#arica_y_parinacota" onClick="ga('send','event','Region','click','arica_y_parinacota')">Arica y Parinacota</a></li>
-							<li><a href="#tarapaca" onClick="ga('send','event','Region','click','tarapaca')">Tarapacá</a></li>
-							<li><a href="#antofagasta" onClick="ga('send','event','Region','click','antofagasta')">Antofagasta</a></li>
-							<li><a href="#atacama" onClick="ga('send','event','Region','click','atacama')">Atacama</a></li>
-							<li><a href="#coquimbo" onClick="ga('send','event','Region','click','coquimbo')">Coquimbo</a></li>
-							<li><a href="#valparaiso" onClick="ga('send','event','Region','click','valparaiso')">Valparaíso</a></li>
-							<li><a href="#metropolitana" onClick="ga('send','event','Region','click','metropolitana')">Metropolitana</a></li>
-							<li><a href="#ohiggins" onClick="ga('send','event','Region','click','ohiggins')">O'Higgins</a></li>
-							<li><a href="#maule" onClick="ga('send','event','Region','click','maule')">Maule</a></li>
-							<li><a href="#biobio" onClick="ga('send','event','Region','click','biobio')">Bio-Bio</a></li>
-							<li><a href="#araucania" onClick="ga('send','event','Region','click','araucania')">Araucania</a></li>
-							<li><a href="#los_rios" onClick="ga('send','event','Region','click','los_rios')">los Ríos</a></li>
-							<li><a href="#los_lagos" onClick="ga('send','event','Region','click','los_lagos')">los Lagos</a></li>
-							<li><a href="#aysen" onClick="ga('send','event','Region','click','aysen')">Aysen</a></li>
-							<li><a href="#magallanes" onClick="ga('send','event','Region','click','magallanes')">Magallanes</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-			<?php
-			}
-			?>
-		</nav>
-
+	<body onload="initialize()">
+		
 		<div class="container">
-			<div class="row">
-				<div class="alert alert-info col-sm-3 col-sm-offset-9">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Hey!!!</strong>
-					Estamos con una nueva versión y me gustaría obtener <a href="https://docs.google.com/forms/d/1HoKg74V_RLUEhBrZweD-dHcHZqHTDKb0SsyFykkKy8E/viewform" onClick="ga(['Feedback','click'])" target="_blank">comentarios <i class="glyphicon glyphicon-envelope"></i></a>
-				</div>
-			</div>
-			<div class="row">
-				
-				<?php
-				$filter_region = (isset($_GET['r'])) ? '&r='.$_GET['r'] : '';
-				$aListadoFarmacias = json_decode( file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/777.php?type=json'.$filter_region) );
-
-				foreach( $aListadoFarmacias as $key => $farmacia ) {
-					?>
-					<div class="col-xs-12">
-						<div class="page-header">
-					      <h2 id="<?php echo $key ?>"><?php echo $farmacia[0]->region ?></h2>
-					    </div>
-					    <div class="table-responsive">
-						    <table class="table table-striped">
-						    	<tr>
-						    		<th>Comuna</th>
-						    		<th>Dirección</th>
-						    		<th>Farmacia</th>
-						    	</tr>
-						    <?php
-						    foreach( $farmacia as $f ) {
-						    	?>
-						    	<tr>
-						    		<td><?php echo $f->comuna ?></td>
-						    		<td><a href="http://maps.google.com?q=<?php echo urlencode($f->direccion.', '.$f->comuna) ?>" onClick="ga(['send','event', 'Mapa','click','<?php echo str_replace(' ', '-', $f->comuna) ?>'])" target="_blank"><?php echo $f->direccion ?></a></td>
-						    		<td><?php echo $f->farmacia ?></td>
-						    	</tr>
-						    	<?php
-						    }
-						    ?>
-						    </table>
-						</div>
-						<a href="#top" onClick="ga(['send','event', 'Volver','click'])">volver</a>
-					</div>
-					<?php
-				}
-				?>
-			</div>
+			<div id="map_canvas"></div>
 		</div>
+		
 		<?php include_once("ganalytics.php") ?>
 	</body>
 </html>
