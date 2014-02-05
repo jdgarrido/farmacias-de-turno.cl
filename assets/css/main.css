@@ -1,0 +1,35 @@
+@media (max-width: 480px) {
+  .set_Width_Height {
+    width: auto;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .set_Width_Height {
+    width: auto;
+    min-height: 675px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .set_Width_Height {
+    width: auto;
+    height: 1024px;
+  }
+}
+
+@media (min-width: 980px) {
+  .set_Width_Height {
+    width: auto;
+    height: 765px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .set_Width_Height {
+    width: auto;
+    min-height: 675px;
+  }
+}
+

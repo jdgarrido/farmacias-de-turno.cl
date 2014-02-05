@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/assets/css/main.css">
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -110,10 +111,6 @@
 
 		</script>
 		<style>
-			.set_Width_Height {
-				width: auto;
-				min-height: 500px;
-			}
 			.container {
 				padding-right: initial;
 				padding-left: initial;
