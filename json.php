@@ -18,5 +18,5 @@ if( $type == htmlentities($_GET['type'])) {
   header('Content-Type: application/json; charset=utf-8');
 }
 
-$data = file_get_contents(JUNAR_URL.AUTH_KEY.'&output='.OUTPUT.'&filter0=column0[==]7');
+$data = file_get_contents(JUNAR_URL.AUTH_KEY.'&output='.OUTPUT.'&filter0=column0[>=]1');
 echo $data;

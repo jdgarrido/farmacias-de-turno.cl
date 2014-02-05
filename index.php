@@ -41,7 +41,6 @@
 			        position: pos
 			      });
 
-			      
 			      var marker = new google.maps.Marker({
 			      	position: pos,
 				      map: map,
@@ -88,14 +87,14 @@
 
 	    function handleNoGeolocation(errorFlag) {
 			  if (errorFlag) {
-			    var content = 'Error: The Geolocation service failed.';
+			    var content = 'Wopa!!! tenemos problemas para encontrarte.';
 			  } else {
-			    var content = 'Error: Your browser doesn\'t support geolocation.';
+			    var content = ':( tu navegador no soporta geolicalización.';
 			  }
 
 			  var options = {
-			    map: map,
-			    position: new google.maps.LatLng(60, 105),
+					map: map,
+			    position: new google.maps.LatLng(-38.2097309,-73.423592),
 			    content: content
 			  };
 
